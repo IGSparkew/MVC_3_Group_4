@@ -23,7 +23,7 @@ class ArticleController extends AbstractController{
 
     #[Route(path: "/addArticles", name: "createArticle" ,httpMethod: "POST")]
     public function createArticle(EntityManager $em){
-
+            
 
 
     }
