@@ -23,7 +23,30 @@ class ArticleController extends AbstractController{
 
     #[Route(path: "/addArticles", name: "createArticle" ,httpMethod: "POST")]
     public function createArticle(EntityManager $em){
-            
+        session_start();
+        if(!isset($_SESSION['auth'])){
+            header('Location:/login');
+        }
+        $title = $_POST['title'];
+        $text = $_POST['text'];
+        $imageUrl = $_POST['image'];
+
+        if($text != null && $imageUrl != null && $title != null){
+
+            $article = new Article();
+            $article->setTitle($title)
+            ->setText($text)
+            ->setUrl_img($imageUrl)
+            ->setUserId($_SESSION['auth'])
+            ->setCreated(new DateTime('NOW'));
+
+            $em->persist($article);
+            $em->flush();
+
+            header('Location:/home');
+        }else{
+            echo "information manquante pour créer l'article";
+        }
 
 
     }
@@ -35,27 +58,6 @@ class ArticleController extends AbstractController{
         echo $this->twig->render('article/article.html.twig',['article'=>$article]);
         
     }
-
-    #[Route(path: "/updateArticle/{id}", name: "updateArticle" ,httpMethod: "POST")]
-    public function updateArticle(EntityManager $em, $id){
-        $article = $em->getRepository(Article::class)->findOneById($id);
-
-        
-        
-    }
-
-    
-    #[Route(path: "/deleteArticle/{id}", name: "deleteArticle" ,httpMethod: "POST")]
-    public function deleteArticle(EntityManager $em, $id){
-        $article = $em->getRepository(Article::class)->findOneById($id);
-
-        
-        
-    }
-
-
-
-
 
 
 }

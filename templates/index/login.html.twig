@@ -1,168 +1,214 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <title>Login</title>
-</head>
-
-<style>
-/* Full-width input fields */
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  
-  /* Set a style for all buttons */
-  button {
-    background-color: #04AA6D;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  button:hover {
-    opacity: 0.8;
-  }
-  
-  /* Extra styles for the cancel button */
-  .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-  }
-  
-  /* Center the image and position the close button */
-  .imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-  }
-  
-  
-  
-  .container {
-    padding: 16px;
-  }
-  
-  span.psw {
-    float: right;
-    padding-top: 16px;
-  }
-  
-  /* The Modal (background) */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button (x) */
-  .close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: red;
-    cursor: pointer;
-  }
-  
-  /* Add Zoom Animation */
-  .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-  }
-  
-  @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
-  }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se connecter</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
     
-  @keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
-  }
-  
-  /* Change styles for span and cancel button on extra small screens */
-  @media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
     }
-    .cancelbtn {
-       width: 100%;
+    body{
+      background: #fec107;
+      padding: 0 10px;
     }
-  }
+    .wrapper{
+      max-width: 500px;
+      width: 100%;
+      background: #fff;
+      margin: 50px auto;
+      box-shadow: 2px 2px 4px rgba(0,0,0,0.125);
+      padding: 30px;
+    }
+    
+    .wrapper .title{
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: #fec107;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    
+    .wrapper .form{
+      width: 100%;
+    }
+    
+    .wrapper .form .inputfield{
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .wrapper .form .inputfield label{
+       width: 200px;
+       color: #757575;
+       margin-right: 10px;
+      font-size: 14px;
+    }
+    
+    .wrapper .form .inputfield .input,
+    .wrapper .form .inputfield .textarea{
+      width: 100%;
+      outline: none;
+      border: 1px solid #d5dbd9;
+      font-size: 15px;
+      padding: 8px 10px;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+    
+    .wrapper .form .inputfield .textarea{
+      width: 100%;
+      height: 125px;
+      resize: none;
+    }
+    
+    .wrapper .form .inputfield .custom_select{
+      position: relative;
+      width: 100%;
+      height: 37px;
+    }
+    
+    .wrapper .form .inputfield .custom_select:before{
+      content: "";
+      position: absolute;
+      top: 12px;
+      right: 10px;
+      border: 8px solid;
+      border-color: #d5dbd9 transparent transparent transparent;
+      pointer-events: none;
+    }
+    
+    .wrapper .form .inputfield .custom_select select{
+      -webkit-appearance: none;
+      -moz-appearance:   none;
+      appearance:        none;
+      outline: none;
+      width: 100%;
+      height: 100%;
+      border: 0px;
+      padding: 8px 10px;
+      font-size: 15px;
+      border: 1px solid #d5dbd9;
+      border-radius: 3px;
+    }
+    
+    
+    .wrapper .form .inputfield .input:focus,
+    .wrapper .form .inputfield .textarea:focus,
+    .wrapper .form .inputfield .custom_select select:focus{
+      border: 1px solid #fec107;
+    }
+    
+    .wrapper .form .inputfield p{
+       font-size: 14px;
+       color: #757575;
+    }
+    .wrapper .form .inputfield .check{
+      width: 15px;
+      height: 15px;
+      position: relative;
+      display: block;
+      cursor: pointer;
+    }
+    .wrapper .form .inputfield .check input[type="checkbox"]{
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    .wrapper .form .inputfield .check .checkmark{
+      width: 15px;
+      height: 15px;
+      border: 1px solid #fec107;
+      display: block;
+      position: relative;
+    }
+    .wrapper .form .inputfield .check .checkmark:before{
+      content: "";
+      position: absolute;
+      top: 1px;
+      left: 2px;
+      width: 5px;
+      height: 2px;
+      border: 2px solid;
+      border-color: transparent transparent #fff #fff;
+      transform: rotate(-45deg);
+      display: none;
+    }
+    .wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark{
+      background: #fec107;
+    }
+    
+    .wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark:before{
+      display: block;
+    }
+    
+    .wrapper .form .inputfield .btn{
+      width: 100%;
+       padding: 8px 10px;
+      font-size: 15px; 
+      border: 0px;
+      background:  #fec107;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 3px;
+      outline: none;
+    }
+    
+    .wrapper .form .inputfield .btn:hover{
+      background: #ffd658;
+    }
+    
+    .wrapper .form .inputfield:last-child{
+      margin-bottom: 0;
+    }
+    
+    @media (max-width:420px) {
+      .wrapper .form .inputfield{
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .wrapper .form .inputfield label{
+        margin-bottom: 5px;
+      }
+      .wrapper .form .inputfield.terms{
+        flex-direction: row;
+      }
+    }
+    
+    </style>
+  </head>
 
-</style>
 <body>
-<h2>Se connecter ci-dessous</h2>
+    <div class="wrapper">
+        <div class="title">
+          Se connecter
+        </div>
+           <div class="inputfield">
+            <label>Email</label>
+            <input type="text" class="input">
+         </div> 
+           <div class="inputfield">
+              <label>Mot de passe</label>
+              <input type="password" class="input">
+           </div>  
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/getUser" method="POST">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <div class="inputfield terms">
+              <label class="check">
+              </label>
+           </div> 
+          <div class="inputfield">
+            <input type="submit" value="Se connecter" class="btn">
+          </div>
+        </div>
     </div>
-
-    <div class="container">
-      <label for="username"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="username" id='username' required>
-
-      <label for="password"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" id='password' required>
-        
-      <button type="submit">Login</button>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
-
-<script>
-var modal = document.getElementById('id01');
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
 </body>
 </html>

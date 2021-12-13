@@ -28,7 +28,7 @@ class UserController extends AbstractController
   public function createUser(EntityManager $em){
 
     session_start();
-    if($_SESSION['auth'] != ' '){
+    if(isset($_SESSION['auth'])){
       header('Location:/home');
     }
 
@@ -69,7 +69,7 @@ class UserController extends AbstractController
   public function getUser(EntityManager $em){
     
     session_start();
-    if($_SESSION['auth'] != null){
+    if(isset($_SESSION['auth'])){
       header('Location:/home');
     }
 

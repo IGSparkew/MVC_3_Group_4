@@ -41,14 +41,14 @@ class IndexController extends AbstractController
     session_start();
 
     echo "Home";
-    echo $_SESSION['auth'];
+   
   }
 
 
   #[Route(path:"/register", name:"registerView",httpMethod: "GET")]
   public function registerView(){
     session_start();
-    if($_SESSION['auth'] != null){
+    if(isset($_SESSION['auth'])){
       header('Location:/home');
     }
     echo $this->twig->render('index/register.html.twig');
@@ -57,7 +57,7 @@ class IndexController extends AbstractController
   #[Route(path:"/login", name:"loginView",httpMethod: "GET")]
   public function loginView(){
     session_start();
-    if($_SESSION['auth'] != null){
+    if(isset($_SESSION['auth'])){
       header('Location:/home');
     }
     echo $this->twig->render('index/login.html.twig');

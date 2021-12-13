@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un article</title>
+    <style>
+        label,
+textarea {
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+textarea {
+    padding: 100px;
+    max-width: 100%;
+    line-height: 5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+.button {
+    background-color: #1e89cc;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 10px;
+    cursor: pointer;
+    height: 2px;
+    }
+    </style>
+</head>
+<body>
+    <BODY BACKGROUND="wiki.png">
+<form action="/addArticles" method="POST">
+<input type="text" placeholder="Ajouter votre Titre" id="title"/>
+<textarea id="text" name="text"
+          rows="5" cols="33">
+Ajouter votre texte.
+</textarea>
+<div style="width: 100%; height: 100%">
+    <input type="text" placeholder="Ajouter votre Image" id="image"/>
+</div>
+<button type="submit">Ajouter un article</button>
+</form>
+
+</body>
+</html>
