@@ -10,7 +10,7 @@ use Doctrine\ORM\Query\ResultSetMapping;
 
 
 
-class UserController extends AbstractController{
+class ArticleController extends AbstractController{
 
 
     #[Route(path: "/Articles", name: "showArticle" ,httpMethod: "GET")]
