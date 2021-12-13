@@ -17,7 +17,7 @@ class ArticleController extends AbstractController{
     public function showArticle(EntityManager $em){
 
         $articles = $em->getRepository(Articles::class)->findAll();
-        echo $this->twig->render('index/home.html.twig',['articles'=>$articles]);
+        echo $this->twig->render('article/articles.html.twig',['articles'=>$articles]);
     }
 
 

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/a19bde2efa.js" crossorigin="anonymous"></script>
+  <title>Blog </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="articles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+
+  
+  
+</head>
+<body>
+  <BODY BACKGROUND="font.jpg">
+
+
+  <div class="gauche">
+    <h2>Bienvenue Sur</h2>
+</div>
+<div class="droite">
+    <h2>Notre Blog </h2>
+</div>
+
+<h1>Le Blog de dev</h1>
+
+
+
+
+
+<script type="text/javascript">
+
+
+    TweenMax.to('.gauche', 2, {
+          delay: 1.5,
+          top: "-150%",
+          ease: Expo.easeInOut
+    })
+    TweenMax.to('.gauche h2', 2, {
+          delay: 1,
+          opacity: 0,
+          y: -100,
+          ease: Expo.easeInOut
+    })
+    TweenMax.to('.droite', 2, {
+          delay: 2.5,
+          top: "+100%",
+          ease: Expo.easeInOut
+    })
+    TweenMax.to('.droite h2', 2, {
+          delay: 2,
+          opacity: 0,
+          y: +60,
+          ease: Expo.easeInOut
+    })
+
+
+    TweenMax.from(".nav", 2, {
+          delay: 3,
+          opacity: 0,
+          y: -60,
+          ease: Expo.easeInOut
+    })
+    TweenMax.from(".social", 2, {
+          delay: 3,
+          opacity: 0,
+          y: 360,
+          ease: Expo.easeInOut
+    })
+    TweenMax.from("h1", 2, {
+          delay: 3,
+          opacity: 0,
+          x: 360,
+          ease: Expo.easeInOut
+    })
+
+</script>
+
+
+
+
+
+
+
+
+  <nav class="navbar">
+    <ul class="navbar-menu">
+      <li class="navbar-item logo">
+        <a href="#" class="navbar-link">
+          <span class="navbar-title">Blog</span>
+          <i class="fas fa-chevron-right navbar-icon"></i>
+        </a>
+      </li>
+      <li class="navbar-item">
+        <a href="#" class="navbar-link">
+          <i class="fas fa-home navbar-icon"></i>
+          <span class="navbar-title">Accueil</span>
+        </a>
+      </li>
+      <li class="navbar-item">
+        <a href="articles\articles.html" class="navbar-link">
+          <i class="fas fa-folder navbar-icon"></i>
+          <span class="navbar-title">Articles</span>
+        </a>
+      </li>
+      <li class="navbar-item">
+        <a href="ajoutArticle.html" class="navbar-link">
+          <i class="fas fa-plus navbar-icon"></i>
+          <span class="navbar-title">Ajouter des articles</span>
+        </a>
+      </li>
+      <li class="navbar-item">
+        <a href="register.html" class="navbar-link">
+          <i class="fas fa-user navbar-icon"></i>
+          <span class="navbar-title">S'enregistrer</span>
+        </a>
+      </li>
+
+      <li class="navbar-item">
+        <a href="contact.html" class="navbar-link">
+          <i class="fas fa-phone navbar-icon"></i>
+          <span class="navbar-title">Contact</span>
+        </a>
+      </li>
+      <li class="navbar-item">
+        <a href="login.html" class="navbar-link">
+          <i class="fas fa-user navbar-icon"></i>
+          <span class="navbar-title">Login</span>
+        </a>
+      </li>
+      <li class="navbar-item">
+        <i class="fas fa-sign-out-alt navbar-icon"></i>
+        <span class="navbar-title">Logout</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  
+
+  
+
+</body>
